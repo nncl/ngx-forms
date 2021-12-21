@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-forms-handle-errors": [
+        "dist/ngx-forms-handle-errors/ngx-forms-handle-errors",
+        "dist/ngx-forms-handle-errors"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
