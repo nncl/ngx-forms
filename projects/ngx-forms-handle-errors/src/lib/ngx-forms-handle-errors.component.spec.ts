@@ -1,8 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { NgxFormsHandleErrorsComponent } from './ngx-forms-handle-errors.component';
 import { NgxFormsHandleErrorsModule } from './ngx-forms-handle-errors.module';
-import { NgForm } from '@angular/forms';
+import { ControlValueAccessor, NgForm, NgModel, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 
 describe('NgxFormsHandleErrorsComponent', () => {
   let component: NgxFormsHandleErrorsComponent;
@@ -31,4 +32,57 @@ describe('NgxFormsHandleErrorsComponent', () => {
     component.save(form);
     expect(component.form).toBeTruthy();
   });
+
+  it('should have errors when submitted', fakeAsync(() => {
+    const form = new NgForm([], []);
+    const inputUsername = new InputCustomMock();
+    const modelUsername = new NgModel(form, [ Validators.required ], [], [ inputUsername ]);
+
+    modelUsername.name = 'username';
+    modelUsername.control.setValue('Caue');
+    form.addControl(modelUsername);
+
+    tick(100);
+    component.save(form);
+
+    tick(1000);
+    expect(component.form?.invalid).toBeTrue();
+  }));
 });
+
+@Component({
+  template: `<input name="username" [(ngModel)]="value"/>`
+})
+class InputCustomMock implements ControlValueAccessor {
+  val = '';
+
+  onChange: any = () => {
+  };
+
+  onTouch: any = () => {
+  };
+
+  get value(): string | null {
+    return this.val;
+  }
+
+  set value(val) {
+    if (val !== undefined && val !== null) {
+      this.val = val;
+      this.onChange(val);
+      this.onTouch(val);
+    }
+  }
+
+  writeValue(value: any): void {
+    this.value = value;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouch = fn;
+  }
+}
