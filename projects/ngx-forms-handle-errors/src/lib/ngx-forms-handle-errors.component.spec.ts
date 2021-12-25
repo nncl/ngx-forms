@@ -48,6 +48,23 @@ describe('NgxFormsHandleErrorsComponent', () => {
     tick(1000);
     expect(component.form?.invalid).toBeTrue();
   }));
+
+  it('should have `custom` error attribute', fakeAsync(() => {
+    const form = new NgForm([], []);
+    const inputUsername = new InputCustomMock();
+    const modelUsername = new NgModel(form, [ Validators.required ], [], [ inputUsername ]);
+
+    modelUsername.name = 'username';
+    modelUsername.control.setValue('Caue');
+    form.addControl(modelUsername);
+
+    tick(100);
+    component.save(form);
+
+    tick(1000);
+
+    expect(modelUsername?.errors?.['custom']).toBeTruthy();
+  }));
 });
 
 @Component({
