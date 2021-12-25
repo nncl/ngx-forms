@@ -1,24 +1,63 @@
 # NgxFormsHandleErrors
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+This module is going to bind the errors from an object to your form inputs.
 
-## Code scaffolding
+[![npm](https://img.shields.io/npm/v/ngx-forms-handle-errors.svg)](https://www.npmjs.com/package/ngx-forms-handle-errors)
 
-Run `ng generate component component-name --project ngx-forms-handle-errors` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-forms-handle-errors`.
-> Note: Don't forget to add `--project ngx-forms-handle-errors` or else it will be added to the default project in your `angular.json` file. 
+[Demo](https://ngx-forms-handle-errors.surge.sh/).
 
-## Build
+## Getting Started
 
-Run `ng build ngx-forms-handle-errors` to build the project. The build artifacts will be stored in the `dist/` directory.
+Install with npm:
 
-## Publishing
+```
+npm i ngx-forms-handle-errors
+```
 
-After building your library with `ng build ngx-forms-handle-errors`, go to the dist folder `cd dist/ngx-forms-handle-errors` and run `npm publish`.
+### Import and Use
 
-## Running unit tests
+```typescript
+import { updateFormErrors } from 'ngx-forms-handle-errors';
+```
 
-Run `ng test ngx-forms-handle-errors` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+// Example of errors returned from an API
+const errors = {
+  "fields": {
+    "username": [
+      "Username has already been taken"
+    ],
+    "email": [
+      "E-mail address already exists"
+    ]
+  }
+}
 
-## Further help
+export class AppComponent {
+  item: any = {};
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  async save(form: NgForm) {
+    if (form.valid) {
+      // Simulating API request
+      setTimeout(() => {
+        // Binding API returned errors
+        updateFormErrors(form, errors);
+      }, 2000);
+    }
+  }
+}
+```
+
+```html
+<form #form="ngForm" novalidate (submit)="save(form)">
+  <div class="control">
+    <input type="text" #username="ngModel" [(ngModel)]="item.username" name="username">
+    <pre>{{ username?.errors?.custom }}</pre>
+  </div>
+  
+  <div class="control">
+    <input type="email" #email="ngModel" [(ngModel)]="item.email" name="email">
+    <pre>{{ email?.errors?.custom }}</pre>
+  </div>
+</form>
+```

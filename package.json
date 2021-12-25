@@ -1,10 +1,11 @@
 {
   "name": "ngx-forms",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:publish": "ng build ngx-forms-handle-errors",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
