@@ -56,5 +56,10 @@
     "ng-packagr": "^13.0.0",
     "typescript": "~4.5.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "errors",
+    "angular-errors",
+    "angular"
+  ]
 }

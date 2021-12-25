@@ -17,5 +17,10 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "errors",
+    "angular-errors",
+    "angular"
+  ]
 }
