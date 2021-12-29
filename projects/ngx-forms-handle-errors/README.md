@@ -61,3 +61,11 @@ export class AppComponent {
   </div>
 </form>
 ```
+
+Then, you'll have the following structure:
+
+```javascript
+{
+  custom: "Username has already been taken"
+}
+```
