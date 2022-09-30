@@ -2,7 +2,9 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": "c418c7b5-50fe-4167-b338-1f8b04889258",
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -47,6 +49,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ngx-forms-handle-errors"
+  }
 }
