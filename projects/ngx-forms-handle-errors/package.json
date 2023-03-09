@@ -1,12 +1,12 @@
 {
   "name": "ngx-forms-handle-errors",
-  "version": "1.2.0",
+  "version": "1.2.2-rc",
   "repository": {
     "type": "git",
     "url": "https://github.com/nncl/ngx-forms"
   },
   "author": {
-    "email": "cauebalmeida@gmail.com",
+    "email": "nncl@live.com",
     "name": "Caue Almeida",
     "url": "https://github.com/nncl"
   },
