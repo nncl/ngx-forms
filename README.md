@@ -16,3 +16,7 @@ npm i ngx-forms-handle-errors
 
 - [`updateFormErrors`](./projects/ngx-forms-handle-errors/README.md)
 
+### Contributing
+
+1. Build the app first with `ng build ngx-forms-handle-errors`
+2. Enters the `dist` directory and make sure everything is correct
