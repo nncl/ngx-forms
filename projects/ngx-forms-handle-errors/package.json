@@ -11,8 +11,8 @@
     "url": "https://github.com/nncl"
   },
   "peerDependencies": {
-    "@angular/common": "^15.2.2",
-    "@angular/core": "^15.2.2"
+    "@angular/common": "^16.1.3",
+    "@angular/core": "^16.1.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"
