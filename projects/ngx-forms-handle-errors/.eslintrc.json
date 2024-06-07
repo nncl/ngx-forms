@@ -7,13 +7,6 @@
       "files": [
         "*.ts"
       ],
-      "parserOptions": {
-        "project": [
-          "projects/ngx-forms-handle-errors/tsconfig.lib.json",
-          "projects/ngx-forms-handle-errors/tsconfig.spec.json"
-        ],
-        "createDefaultProgram": true
-      },
       "extends": [
         "plugin:@angular-eslint/recommended"
       ],
