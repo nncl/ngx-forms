@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { updateFormErrors } from './ngx-forms-handle-errors.utils';
 
@@ -27,15 +27,9 @@ const errors = {
   `,
   styles: []
 })
-export class NgxFormsHandleErrorsComponent implements OnInit {
+export class NgxFormsHandleErrorsComponent {
   form: NgForm | undefined;
   item: any = {};
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
   async save(form: NgForm) {
     this.form = form;

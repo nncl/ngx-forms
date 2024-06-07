@@ -35,7 +35,7 @@ describe('NgxFormsHandleErrorsComponent', () => {
 
   it('should have errors when submitted', fakeAsync(() => {
     const form = new NgForm([], []);
-    const inputUsername = new InputCustomMock();
+    const inputUsername = new InputCustomMockComponent();
     const modelUsername = new NgModel(form, [ Validators.required ], [], [ inputUsername ]);
 
     modelUsername.name = 'username';
@@ -51,7 +51,7 @@ describe('NgxFormsHandleErrorsComponent', () => {
 
   it('should have `custom` error attribute', fakeAsync(() => {
     const form = new NgForm([], []);
-    const inputUsername = new InputCustomMock();
+    const inputUsername = new InputCustomMockComponent();
     const modelUsername = new NgModel(form, [ Validators.required ], [], [ inputUsername ]);
 
     modelUsername.name = 'username';
@@ -70,7 +70,7 @@ describe('NgxFormsHandleErrorsComponent', () => {
 @Component({
   template: `<input name="username" [(ngModel)]="value"/>`
 })
-class InputCustomMock implements ControlValueAccessor {
+class InputCustomMockComponent implements ControlValueAccessor {
   val = '';
 
   onChange: any = () => {
