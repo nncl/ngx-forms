@@ -20,3 +20,5 @@ npm i ngx-forms-handle-errors
 
 1. Build the app first with `ng build ngx-forms-handle-errors`
 2. Enters the `dist` directory and make sure everything is correct
+
+MAKE SURE THAT YOU'RE WITHIN DIST/NGX-FORMS-HANDLE-ERRORS DIRECTORY BEFORE RUNNING `NPM PUBLISH`
