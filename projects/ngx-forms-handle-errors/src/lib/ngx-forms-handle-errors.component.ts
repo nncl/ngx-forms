@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { updateFormErrors } from './ngx-forms-handle-errors.utils';
 
 const errors = {
@@ -26,7 +26,7 @@ const errors = {
     </form>
   `,
     styles: [],
-    standalone: false
+    imports: [FormsModule]
 })
 export class NgxFormsHandleErrorsComponent {
   form: NgForm | undefined;

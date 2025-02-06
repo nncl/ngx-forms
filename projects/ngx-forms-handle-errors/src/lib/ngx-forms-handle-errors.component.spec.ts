@@ -1,9 +1,8 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
-import { NgxFormsHandleErrorsComponent } from './ngx-forms-handle-errors.component';
-import { NgxFormsHandleErrorsModule } from './ngx-forms-handle-errors.module';
-import { ControlValueAccessor, NgForm, NgModel, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
+import { ControlValueAccessor, NgForm, NgModel, Validators } from '@angular/forms';
+import { NgxFormsHandleErrorsComponent } from './ngx-forms-handle-errors.component';
 
 describe('NgxFormsHandleErrorsComponent', () => {
   let component: NgxFormsHandleErrorsComponent;
@@ -11,8 +10,8 @@ describe('NgxFormsHandleErrorsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxFormsHandleErrorsComponent ],
-      imports: [ NgxFormsHandleErrorsModule ]
+      declarations: [  ],
+      imports: [ NgxFormsHandleErrorsComponent ]
     })
       .compileComponents();
   });
@@ -69,7 +68,6 @@ describe('NgxFormsHandleErrorsComponent', () => {
 
 @Component({
     template: `<input name="username" [(ngModel)]="value"/>`,
-    standalone: false
 })
 class InputCustomMockComponent implements ControlValueAccessor {
   val = '';
