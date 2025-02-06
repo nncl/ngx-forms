@@ -68,7 +68,8 @@ describe('NgxFormsHandleErrorsComponent', () => {
 });
 
 @Component({
-  template: `<input name="username" [(ngModel)]="value"/>`
+    template: `<input name="username" [(ngModel)]="value"/>`,
+    standalone: false
 })
 class InputCustomMockComponent implements ControlValueAccessor {
   val = '';
