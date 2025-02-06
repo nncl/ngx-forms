@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { updateFormErrors } from './ngx-forms-handle-errors.utils';
 
 const errors = {
@@ -14,8 +14,8 @@ const errors = {
 }
 
 @Component({
-  selector: 'lib-ngx-forms-handle-errors',
-  template: `
+    selector: 'lib-ngx-forms-handle-errors',
+    template: `
     <form novalidate #form="ngForm" (submit)="save(form)">
       <div class="control">
         <input type="text" name="username" #username="ngModel" [(ngModel)]="item.username" required>
@@ -25,7 +25,8 @@ const errors = {
       </div>
     </form>
   `,
-  styles: []
+    styles: [],
+    imports: [FormsModule]
 })
 export class NgxFormsHandleErrorsComponent {
   form: NgForm | undefined;
