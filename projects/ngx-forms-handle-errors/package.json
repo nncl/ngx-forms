@@ -1,6 +1,6 @@
 {
   "name": "ngx-forms-handle-errors",
-  "version": "1.7.0",
+  "version": "1.8.0-beta",
   "repository": {
     "type": "git",
     "url": "https://github.com/nncl/ngx-forms"
@@ -11,8 +11,8 @@
     "url": "https://github.com/nncl"
   },
   "peerDependencies": {
-    "@angular/common": "^20.3.4",
-    "@angular/core": "^20.3.4"
+    "@angular/common": "^21.1.4",
+    "@angular/core": "^21.1.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"
