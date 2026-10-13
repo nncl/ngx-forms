@@ -3,7 +3,7 @@
   "cli": {
     "analytics": "c418c7b5-50fe-4167-b338-1f8b04889258",
     "schematicCollections": [
-      "@angular-eslint/schematics"
+      "angular-eslint"
     ]
   },
   "version": 1,
@@ -16,7 +16,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular/build:ng-packagr",
           "options": {
             "project": "projects/ngx-forms-handle-errors/ng-package.json"
           },
@@ -31,7 +31,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:karma",
           "options": {
             "main": "projects/ngx-forms-handle-errors/src/test.ts",
             "tsConfig": "projects/ngx-forms-handle-errors/tsconfig.spec.json",

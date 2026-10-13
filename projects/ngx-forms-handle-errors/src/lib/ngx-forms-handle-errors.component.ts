@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { updateFormErrors } from './ngx-forms-handle-errors.utils';
 
@@ -26,6 +26,7 @@ const errors = {
     </form>
   `,
     styles: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule]
 })
 export class NgxFormsHandleErrorsComponent {
