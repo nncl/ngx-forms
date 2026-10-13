@@ -25,6 +25,17 @@ npm i ngx-forms-handle-errors
 
 ### Publishing
 
-Publishing is automated by [`.github/workflows/publish.yml`](./.github/workflows/publish.yml): every push to `main` runs the tests, builds the library and publishes it to npm **if** the version in `projects/ngx-forms-handle-errors/package.json` isn't published yet. After a successful publish, it creates a GitHub Release (and tag) named after the version, with auto-generated release notes. To release, bump that version and merge into `main`.
+Publishing is fully automated by [`.github/workflows/publish.yml`](./.github/workflows/publish.yml). **Don't bump versions manually.** On every push to `main`, the pipeline computes the next version from the [Conventional Commits](https://www.conventionalcommits.org/) since the last git tag:
+
+| Commit | Release |
+| :--- | :--- |
+| `feat!:` / `BREAKING CHANGE:` in the body | major |
+| `feat:` | minor |
+| `fix:` / `perf:` | patch |
+| `docs`, `ci`, `test`, `build`, `chore`, `refactor`... | none |
+
+When there's something to release, it runs the tests, builds the library with the new version, publishes it to npm and creates a GitHub Release (and tag) with auto-generated release notes. Git tags are the source of truth for the version; the `version` in the repository's `package.json` files isn't updated.
+
+To force a release, run the workflow manually (**Actions → Publish to npm → Run workflow**) and pick `patch`, `minor` or `major`.
 
 To publish manually instead, **make sure that you're within `dist/ngx-forms-handle-errors` before running `npm publish`**.
