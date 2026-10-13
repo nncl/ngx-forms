@@ -25,6 +25,6 @@ npm i ngx-forms-handle-errors
 
 ### Publishing
 
-Publishing is automated by [`.github/workflows/publish.yml`](./.github/workflows/publish.yml): every push to `main` runs the tests, builds the library and publishes it to npm **if** the version in `projects/ngx-forms-handle-errors/package.json` isn't published yet. To release, bump that version and merge into `main`.
+Publishing is automated by [`.github/workflows/publish.yml`](./.github/workflows/publish.yml): every push to `main` runs the tests, builds the library and publishes it to npm **if** the version in `projects/ngx-forms-handle-errors/package.json` isn't published yet. After a successful publish, it creates a GitHub Release (and tag) named after the version, with auto-generated release notes. To release, bump that version and merge into `main`.
 
 To publish manually instead, **make sure that you're within `dist/ngx-forms-handle-errors` before running `npm publish`**.
