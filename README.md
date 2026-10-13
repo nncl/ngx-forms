@@ -23,4 +23,8 @@ npm i ngx-forms-handle-errors
 1. Build the app first with `ng build ngx-forms-handle-errors`
 2. Enters the `dist` directory and make sure everything is correct
 
-**MAKE SURE THAT YOU'RE WITHIN `DIST/NGX-FORMS-HANDLE-ERRORS` DIRECTORY BEFORE RUNNING `NPM PUBLISH`**
+### Publishing
+
+Publishing is automated by [`.github/workflows/publish.yml`](./.github/workflows/publish.yml): every push to `main` runs the tests, builds the library and publishes it to npm **if** the version in `projects/ngx-forms-handle-errors/package.json` isn't published yet. To release, bump that version and merge into `main`.
+
+To publish manually instead, **make sure that you're within `dist/ngx-forms-handle-errors` before running `npm publish`**.
