@@ -1,6 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ControlValueAccessor, NgForm, NgModel, Validators } from '@angular/forms';
 import { NgxFormsHandleErrorsComponent } from './ngx-forms-handle-errors.component';
 
@@ -67,6 +67,7 @@ describe('NgxFormsHandleErrorsComponent', () => {
 });
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.Eager,
     template: `<input name="username" [(ngModel)]="value"/>`,
 })
 class InputCustomMockComponent implements ControlValueAccessor {
